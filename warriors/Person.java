@@ -1,3 +1,4 @@
+package warriors;
 public abstract class Person {
     private String name;
     // protected Weapon weapon;
@@ -22,6 +23,7 @@ public abstract class Person {
         public boolean isAlive() {
             return healthpoint > 0;
         }
+    
         public void reduceHp(int damage) {
             healthpoint -= damage;
             if (healthpoint < 0) {

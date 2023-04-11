@@ -1,3 +1,4 @@
+package weapon;
 public class Knife implements Weapon{
 
     @Override

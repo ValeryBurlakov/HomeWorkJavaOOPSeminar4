@@ -1,3 +1,4 @@
+package weapon;
 public class Bow extends Throwing {
     private String name;
 
