@@ -1,4 +1,5 @@
 package weapon;
+
 public abstract class Throwing implements Weapon{
     private int distance;
 
@@ -10,10 +11,10 @@ public abstract class Throwing implements Weapon{
         return distance;
     }
 
-    // @Override
-    // public int damage() {
-    //     return 0; 
-    // }
+    @Override
+    public int damage() {
+        return 0; 
+    }
     
     @Override
     public String toString() {

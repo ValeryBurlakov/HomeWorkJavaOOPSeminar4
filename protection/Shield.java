@@ -1,27 +1,19 @@
 package protection;
 public abstract class Shield implements Equipment{
-    // private int weight;
-    private int durability;
-    private String shieldType;
+    protected int durability;
 
-    public Shield(int durability) {
-        this.durability = durability;
-    }
-    
-    public Shield(String shieldType) {
-        this.shieldType = shieldType;
+    protected Shield() {
+        // this.durability = durability;
+        this.durability = durability();
     }
 
     public int getDurability() {
         return durability;
     }
-    // public int getWeight() {
-    //     return weight;
-    // }
 
     @Override
     public int durability() {
-        return durability;
+        return 0;
     }
 
     // public boolean notBroken() {

@@ -33,4 +33,17 @@ public class Team<T extends Person> implements Iterable<T>{
         }
         return max;
     }
+
+    public int minShield() {
+        int min = 50;
+        for (T person : this) { // текущий экземпляр команды
+            if (person instanceof Warrior) { // проверяем на воин ли
+                Warrior warrior = (Warrior) person;
+                if (warrior.getDurability() < min) {
+                    min = warrior.getDurability();
+                }
+            } 
+        }
+        return min;
+    }
 }

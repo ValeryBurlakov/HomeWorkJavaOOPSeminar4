@@ -30,12 +30,4 @@ public abstract class Person {
                 healthpoint = 0;
             }
         }
-        // public abstract void attack(Warrior enemy);
-    
-        // public void takeDamage(int damage) {
-        //     healthpoint -= damage;
-        //     if (healthpoint <= 0) {
-        //         System.out.println(name + " убит!");
-        //     }
-        // }
 }

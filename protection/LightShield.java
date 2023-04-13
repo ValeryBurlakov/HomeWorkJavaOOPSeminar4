@@ -1,9 +1,12 @@
 package protection;
+
 public class LightShield extends Shield{
     private String name;
-    public LightShield(int durability) {
-        super(durability);
+
+    public LightShield() {
+        // super(durability);
         this.name = "Light Shield";
+        this.durability = durability();
     }
     @Override
     public int durability() {

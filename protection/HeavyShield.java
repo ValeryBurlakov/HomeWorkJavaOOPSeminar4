@@ -3,11 +3,11 @@ package protection;
 public class HeavyShield extends Shield{
     private String name;
 
-    public HeavyShield(int durability) {
-        super(durability);
+    public HeavyShield() {
+        // super(durability);
         this.name = "Heavy Shield";
+        this.durability = durability();
     }
-
 
     @Override
     public int durability() {

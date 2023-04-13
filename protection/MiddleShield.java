@@ -1,8 +1,11 @@
 package protection;
+
 public class MiddleShield extends Shield{
     private String name;
-    public MiddleShield(int durability) {
-        super(durability);
+
+    public MiddleShield() {
+        // super(durability);
+        this.durability = durability();
         this.name = "Middle Shield";
     }
 

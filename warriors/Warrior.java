@@ -1,6 +1,7 @@
 package warriors;
 import java.util.Random;
 
+import weapon.Throwing;
 import weapon.Weapon;
 import protection.Equipment;
 
@@ -8,6 +9,7 @@ public class Warrior<T extends Weapon, D extends Equipment> extends Person{
     protected T weapon;
     protected D equipment;
     protected static Random rand = new Random();
+    
     // воин со щитом
     public Warrior(String name, int healthpoint, T weapon, D equipment) {
         super(name, healthpoint);
@@ -15,11 +17,11 @@ public class Warrior<T extends Weapon, D extends Equipment> extends Person{
         this.equipment = equipment;
     }
 
-    // // воин без щита
-    // public Warrior(String name, int healthpoint, T weapon) {
-    //     super(name, healthpoint);
-    //     this.weapon = weapon;
-    // }
+    // воин без щита
+    public Warrior(String name, int healthpoint, T weapon) {
+        super(name, healthpoint);
+        this.weapon = weapon;
+    }
 
     public int harm() {
         Boolean isHit = rand.nextBoolean();
@@ -33,9 +35,18 @@ public class Warrior<T extends Weapon, D extends Equipment> extends Person{
     public Equipment getEquipment() {
         return equipment;
     }
+
     public int getDurability() {
-        return equipment.durability();
+        // return equipment.durability();
+
+        if(equipment != null) {
+            return equipment.durability();
+        } else {
+            int equipment = 0;
+            return equipment;
+        }
     }
+    
     public void reduceDurability(int damage) {
         Integer durab = equipment.durability();
         durab -= damage;
@@ -47,26 +58,24 @@ public class Warrior<T extends Weapon, D extends Equipment> extends Person{
     public boolean shieldNotBroken() {
         return equipment.durability() > 0;
     }
+
         // метод hasEquipment для проверки наличия equipment 
     public Integer hasEquipment() {
         if(equipment != null) {
             return equipment.durability();
         } else {
-            return 0;
+            int equipment = 0;
+            return equipment;
         }
     }
     
-    // public boolean hasEquipment() {
-    //     if(equipment != null) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
+    public int getDistance() {
+        return ((Throwing) weapon).getDistance();
+    }
     
     @Override
     public String toString() {
 
-        return "Warrior { " + "name= " + getName() + " hp= " + getHp() +  " weapon= " + weapon +  " equipment= " + equipment  + " }";
+        return "name = " + getName() + ", hp = " + getHp() +  ", weapon = " + weapon +  ", equipment = " + equipment  + ".";
     }
 }
